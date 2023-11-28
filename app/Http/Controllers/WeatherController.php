@@ -31,7 +31,10 @@ class WeatherController extends Controller
      */
     public function show(Weather $weather)
     {
-        return response()->json(['weather' => $weather], Response::HTTP_OK);
+        // Cargar la relación 'category'
+        $weather->load('category');
+
+        return response()->json(['weather' => $weather, 'category' => $weather->category], Response::HTTP_OK);
     }
 
     /**

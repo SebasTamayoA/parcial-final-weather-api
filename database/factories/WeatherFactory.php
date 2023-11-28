@@ -28,6 +28,7 @@ class WeatherFactory extends Factory
             'forecast' => $this->faker->sentence,
             'latitude' => $this->faker->numberBetween(-90, 90),
             'longitude' => $this->faker->numberBetween(-180, 180),
+            'category_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

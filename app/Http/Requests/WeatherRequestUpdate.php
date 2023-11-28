@@ -33,6 +33,7 @@ class WeatherRequestUpdate extends FormRequest
             'forecast' => 'string|max:500',
             'latitude' => 'numeric|min:-90|max:90',
             'longitude' => 'numeric|min:-180|max:180',
+            'category_id' => 'exists:categories,id',
         ];
     }
 }
